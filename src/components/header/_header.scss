@@ -1,0 +1,55 @@
+.header {
+  &__top-banner {
+    background-color: $black;
+    padding: 10px;
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__header-bar-wrapper {
+    @include container;
+  }
+
+  &__header-bar {
+    padding: 10px 0;
+  }
+
+  &__header-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-wrapper {
+    flex-grow: 2;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  &__bag-icon {
+    width: 20px;
+  }
+
+  &__mobile-nav {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background-color: $grey;
+    width: 100%;
+    height: 90vh;
+  }
+
+  &__mobile-nav-links-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    padding-top: 100px;
+  }
+
+  &__mobile-nav-link {
+    padding-bottom: 10px;
+  }
+}

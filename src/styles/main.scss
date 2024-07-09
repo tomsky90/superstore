@@ -1,0 +1,9 @@
+/* Base styles */
+@import "reset.scss";
+@import "mixins.scss";
+@import "variables.scss";
+@import "general.scss";
+
+// components
+
+@import "../components/header/header";
