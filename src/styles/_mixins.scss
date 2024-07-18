@@ -1,12 +1,6 @@
 @mixin view($breakpoint) {
-  @if $breakpoint == mobile {
-    @media only screen and (min-width: 767px) {
-      @content;
-    }
-  }
-
   @if $breakpoint == tablet {
-    @media only screen and (min-width: 1023px) {
+    @media only screen and (min-width: 767px) {
       @content;
     }
   }
