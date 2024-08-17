@@ -1,0 +1,94 @@
+.categories {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  object-fit: contain;
+  padding-bottom: 1000px;
+  @include view(desktop) {
+    @include container;
+  }
+
+  &__bgc-image {
+    height: 350px;
+    object-fit: cover;
+  }
+
+  &__text-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    padding: 15px 0 0 15px;
+    color: $white;
+
+    @include view(tablet) {
+      top: 100px;
+      padding-left: 50px;
+    }
+
+    @include view(desktop) {
+      top: 100px;
+      padding-left: 100px;
+    }
+  }
+
+  &__heading {
+    font-size: 25px;
+    font-weight: bold;
+
+    @include view(tablet) {
+      font-size: 40px;
+    }
+
+    @include view(desktop) {
+      font-size: 80px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    margin-bottom: 30px;
+
+    @include view(tablet) {
+      font-size: 20px;
+    }
+
+    @include view(desktop) {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__linK {
+    background-color: $grey;
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 125px;
+    font-size: 14px;
+    font-weight: bold;
+
+    @include view(tablet) {
+      font-size: 20px;
+    }
+
+    @include view(desktop) {
+      font-size: 30px;
+      padding: 10px 20px;
+      &:hover {
+        background-color: lighten($color: $grey, $amount: 10%);
+      }
+    }
+  }
+
+  &__cards-wrapper {
+  }
+
+  &__card {
+    width: 100%;
+  }
+
+  &__card-img {
+    width: 100%;
+  }
+}
