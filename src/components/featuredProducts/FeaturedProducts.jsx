@@ -1,9 +1,10 @@
 import Jacket from "../../assets/jacket.jpg";
 
-const FeaturedProducts = () => {
+// eslint-disable-next-line react/prop-types
+const FeaturedProducts = ({ location }) => {
   return (
     <section className="featured">
-      <h2 className="featured__heading">Featured</h2>
+      <h2 className="featured__heading">{location}</h2>
       <div className="featured__cards-wrapper">
         <div className="featured__card">
           <img src={Jacket} alt="jacket" />
