@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: end;
   object-fit: contain;
-  padding-bottom: 1000px;
+
   @include view(desktop) {
     @include container;
   }
@@ -13,6 +13,10 @@
   &__bgc-image {
     height: 350px;
     object-fit: cover;
+
+    @include view(tablet) {
+      height: auto;
+    }
   }
 
   &__text-wrapper {
@@ -63,7 +67,7 @@
   &__linK {
     background-color: $grey;
     color: #000;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 125px;
     font-size: 14px;
     font-weight: bold;
@@ -82,13 +86,80 @@
   }
 
   &__cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -80px;
+
+    @include view(tablet) {
+      flex-direction: row;
+      padding: 5px 50px 5px 50px;
+      margin-top: -150px;
+    }
+
+    @include view(desktop) {
+      margin-top: -200px;
+    }
   }
 
   &__card {
-    width: 100%;
+    position: relative;
+    width: 90%;
+    margin-bottom: 20px;
+
+    @include view(tablet) {
+      margin: 10px;
+      border: 2px solid $white;
+    }
+
+    @include view(desktop) {
+      margin: 20px;
+    }
   }
 
   &__card-img {
     width: 100%;
+  }
+
+  &__card-text-wrapper {
+    position: absolute;
+    top: 60%;
+    color: $white;
+    margin: 10px;
+
+    @include view(tablet) {
+      top: 50%;
+    }
+  }
+
+  &__card-heading {
+    font-weight: bold;
+    font-size: 20px;
+
+    @include view(desktop) {
+      font-size: 30px;
+    }
+  }
+
+  &__card-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    @include view(desktop) {
+      font-size: 20px;
+    }
+  }
+
+  &__card-linK {
+    background-color: $grey;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 125px;
+    font-size: 14px;
+    font-weight: bold;
+
+    @include view(desktop) {
+      font-size: 20px;
+    }
   }
 }

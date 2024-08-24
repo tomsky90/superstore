@@ -27,6 +27,13 @@ const Categories = () => {
             src={womenFashion}
             alt="women fashion"
           />
+          <div className="categories__card-text-wrapper">
+            <h2 className="categories__card-heading">For Women</h2>
+            <p className="categories__card-text">
+              Get everything you need this summer
+            </p>
+            <Link className="categories__card-linK">Shop Now</Link>
+          </div>
         </div>
         <div className="categories__card">
           <img
@@ -34,6 +41,13 @@ const Categories = () => {
             src={menFashion}
             alt="men fashion"
           />
+          <div className="categories__card-text-wrapper">
+            <h2 className="categories__card-heading">For Men</h2>
+            <p className="categories__card-text">
+              Stay comfortable whatever the weather
+            </p>
+            <Link className="categories__card-linK">Shop Now</Link>
+          </div>
         </div>
         <div className="categories__card">
           <img
@@ -41,6 +55,13 @@ const Categories = () => {
             src={kidsFashion}
             alt="kids fashion"
           />
+          <div className="categories__card-text-wrapper">
+            <h2 className="categories__card-heading">For Kids</h2>
+            <p className="categories__card-text">
+              Make sure they are comfortable while making these memories
+            </p>
+            <Link className="categories__card-linK">Shop Now</Link>
+          </div>
         </div>
       </div>
     </section>
