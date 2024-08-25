@@ -1,0 +1,57 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+  color: $white;
+  padding: 40px 15px;
+
+  &__top {
+    @include view(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @include view(tablet) {
+      width: 25%;
+    }
+  }
+
+  &__h1 {
+    font-weight: 500;
+  }
+
+  &__span {
+    color: $grey;
+
+    &:hover {
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  &__p {
+    color: $grey;
+  }
+
+  &__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    color: $orange;
+    margin-right: 10px;
+    font-weight: 800;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+  }
+}
