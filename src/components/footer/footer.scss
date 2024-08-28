@@ -53,5 +53,17 @@
 
   &__image {
     margin-bottom: 20px;
+
+    @include view(desktop) {
+      width: 50%;
+    }
+  }
+
+  &__bottom {
+    @include view(desktop) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+    }
   }
 }
