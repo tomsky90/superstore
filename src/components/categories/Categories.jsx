@@ -18,7 +18,9 @@ const Categories = () => {
         <p className="categories__text">
           Get everything you need, for whole family
         </p>
-        <Link className="categories__linK">Shop All</Link>
+        <Link to="/categories/:all" className="categories__linK">
+          Shop All
+        </Link>
       </div>
       <div className="categories__cards-wrapper">
         <div className="categories__card">
@@ -32,7 +34,9 @@ const Categories = () => {
             <p className="categories__card-text">
               Get everything you need this summer
             </p>
-            <Link className="categories__card-linK">Shop Now</Link>
+            <Link to="/categories/:women" className="categories__card-linK">
+              Shop Now
+            </Link>
           </div>
         </div>
         <div className="categories__card">
@@ -46,7 +50,9 @@ const Categories = () => {
             <p className="categories__card-text">
               Stay comfortable whatever the weather
             </p>
-            <Link className="categories__card-linK">Shop Now</Link>
+            <Link to="/categories/men" className="categories__card-linK">
+              Shop Now
+            </Link>
           </div>
         </div>
         <div className="categories__card">
@@ -60,7 +66,9 @@ const Categories = () => {
             <p className="categories__card-text">
               Make sure they are comfortable while making these memories
             </p>
-            <Link className="categories__card-linK">Shop Now</Link>
+            <Link to="/categories/:kids" className="categories__card-linK">
+              Shop Now
+            </Link>
           </div>
         </div>
       </div>

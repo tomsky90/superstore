@@ -53,22 +53,22 @@ const Header = () => {
           <nav className="header__desktop-nav">
             <ul className="header__desktop-nav-links-list">
               <li className="header__desktop-nav-link">
-                <NavLink to="/sale">Sale</NavLink>
+                <NavLink to="/categories/:sale">Sale</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/men">Men</NavLink>
+                <NavLink to="/categories/:men">Men</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/women">Women</NavLink>
+                <NavLink to="/categories/:women">Women</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/accesories">Accesories</NavLink>
+                <NavLink to="/categories/:accesories">Accesories</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/kids">Kids</NavLink>
+                <NavLink to="/categories/:kids">Kids</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/offers">Offers</NavLink>
+                <NavLink to="/categories/:offers">Offers</NavLink>
               </li>
             </ul>
           </nav>
@@ -86,22 +86,22 @@ const Header = () => {
           >
             <ul className="header__mobile-nav-links-list">
               <li className="header__mobile-nav-link">
-                <NavLink>Sale</NavLink>
+                <NavLink to="/categories/:sale">Sale</NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink>Men</NavLink>
+                <NavLink to="/categories/:men">Men</NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink>Women</NavLink>
+                <NavLink to="/categories/:women">Women</NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink>Accesories</NavLink>
+                <NavLink to="/categories/:accesories">Accesories</NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink>Kids</NavLink>
+                <NavLink to="/categories/:kids">Kids</NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink>Offers</NavLink>
+                <NavLink to="/categories/:offers">Offers</NavLink>
               </li>
             </ul>
           </nav>
