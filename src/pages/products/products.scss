@@ -1,5 +1,6 @@
 .products-page {
-  padding: 30px 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
 
@@ -8,10 +9,17 @@
     // position: sticky;
     height: 100%;
     top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   &__right {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
     flex: 3;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   &__banner-img {
@@ -27,11 +35,24 @@
 
   &__h2 {
     font-weight: 400;
-    margin-bottom: 20px;
   }
 
-  &__input-wrapper {
+  &__heading-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__show-btn {
+    font-size: 30px;
+  }
+
+  &__inputs-wrapper {
     margin-bottom: 10px;
+
+    &--hide {
+      display: none;
+    }
   }
 
   &__label {
