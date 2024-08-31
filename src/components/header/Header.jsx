@@ -4,15 +4,18 @@ import HideNavBtn from "../../assets/close.webp";
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
-const Header = () => {
+// eslint-disable-next-line react/prop-types
+const Header = ({ setAppHidden }) => {
   const [isMobileNavActive, setIsMobileNavActive] = useState(false);
 
   const showNav = () => {
     setIsMobileNavActive(true);
+    setAppHidden(true);
   };
 
   const hideNav = () => {
     setIsMobileNavActive(false);
+    setAppHidden(false);
   };
   return (
     <div className="header">

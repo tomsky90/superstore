@@ -21,3 +21,8 @@ a,
 button {
   cursor: pointer;
 }
+
+.app--hidden {
+  overflow-y: hidden;
+  height: 100vh;
+}
