@@ -5,11 +5,13 @@ import Footer from "./components/footer/Footer";
 // import Product from "./pages/Product/Product";
 import Products from "./pages/products/Products";
 import "./styles/main.scss";
+import { useState } from "react";
 
 const Layout = () => {
+  const [appHidden, setAppHidden] = useState(false);
   return (
-    <div className="app">
-      <Header />
+    <div className={appHidden ? "app app--hidden" : "app"}>
+      <Header setAppHidden={setAppHidden} />
       <Outlet />
       <Footer />
     </div>

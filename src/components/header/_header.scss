@@ -83,7 +83,7 @@
   }
 
   &__mobile-nav {
-    position: absolute;
+    position: fixed;
     top: 120px;
     left: 0;
     background-color: $grey;
@@ -112,5 +112,9 @@
 
   &__mobile-nav-link {
     padding-bottom: 10px;
+
+    @include view(tablet) {
+      font-size: 30px;
+    }
   }
 }

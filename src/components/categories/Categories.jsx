@@ -64,7 +64,7 @@ const Categories = () => {
           <div className="categories__card-text-wrapper">
             <h2 className="categories__card-heading">For Kids</h2>
             <p className="categories__card-text">
-              Make sure they are comfortable while making these memories
+              Kids clothes in great prices
             </p>
             <Link to="/categories/:kids" className="categories__card-linK">
               Shop Now

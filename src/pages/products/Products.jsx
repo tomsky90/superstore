@@ -30,12 +30,13 @@ const Products = () => {
       <div className="products-page__left">
         <div className="products-page__filter-item">
           <div className="products-page__heading-wrapper">
-            <h2 className="products-page__h2">Product Categories</h2>
             <button
               onClick={() => toggleVisibility("element1")}
               className="products-page__show-btn"
             >
-              +
+              {visibility.element1
+                ? "Product Categories -"
+                : "Product Categories +"}
             </button>
           </div>
 
@@ -67,8 +68,22 @@ const Products = () => {
           </div>
         </div>
         <div className="products-page__filter-item">
-          <h2 className="products-page__h2">Filter by price</h2>
-          <div className="products-page__input-wrapper">
+          <div className="products-page__heading-wrapper">
+            <button
+              onClick={() => toggleVisibility("element2")}
+              className="products-page__show-btn"
+            >
+              {visibility.element2 ? "Filter by price -" : "Filter by price +"}
+            </button>
+          </div>
+
+          <div
+            className={
+              visibility.element2
+                ? "products-page__inputs-wrapper"
+                : "products-page__inputs-wrapper--hide"
+            }
+          >
             <span>0</span>
             <input
               type="range"
@@ -80,30 +95,45 @@ const Products = () => {
           </div>
         </div>
         <div className="products-page__filter-item">
-          <h2 className="products-page__h2">Sort by</h2>
-          <div className="products-page__input-wrapper">
-            <input
-              type="radio"
-              id="asc"
-              value="asc"
-              name="price"
-              onChange={() => setSort("asc")}
-            />
-            <label className="products-page__label" htmlFor="asc">
-              Price (Lowest first)
-            </label>
+          <div className="products-page__heading-wrapper">
+            <button
+              onClick={() => toggleVisibility("element3")}
+              className="products-page__show-btn"
+            >
+              {visibility.element3 ? "Sort by -" : "Sort by +"}
+            </button>
           </div>
-          <div className="products-page__input-wrapper">
-            <input
-              type="radio"
-              id="desc"
-              value="desc"
-              name="price"
-              onChange={() => setSort("desc")}
-            />
-            <label className="products-page__label" htmlFor="desc">
-              Price (Highest first)
-            </label>
+          <div
+            className={
+              visibility.element3
+                ? "products-page__inputs-wrapper"
+                : "products-page__inputs-wrapper--hide"
+            }
+          >
+            <div className="products-page__input-wrapper">
+              <input
+                type="radio"
+                id="asc"
+                value="asc"
+                name="price"
+                onChange={() => setSort("asc")}
+              />
+              <label className="products-page__label" htmlFor="asc">
+                Price (Lowest first)
+              </label>
+            </div>
+            <div className="products-page__input-wrapper">
+              <input
+                type="radio"
+                id="desc"
+                value="desc"
+                name="price"
+                onChange={() => setSort("desc")}
+              />
+              <label className="products-page__label" htmlFor="desc">
+                Price (Highest first)
+              </label>
+            </div>
           </div>
         </div>
       </div>
