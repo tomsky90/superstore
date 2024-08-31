@@ -18,16 +18,24 @@
     margin-bottom: 20px;
 
     @include view(tablet) {
-      width: 25%;
+      width: 40%;
+      margin-right: 50px;
+    }
+
+    @include view(desktop) {
+      width: 22%;
+      margin-right: 25px;
     }
   }
 
-  &__h1 {
+  &__h2 {
     font-weight: 500;
+    font-size: 18px;
   }
 
   &__span {
     color: $grey;
+    font-size: 14px;
 
     &:hover {
       color: $white;
@@ -37,12 +45,18 @@
 
   &__p {
     color: $grey;
+    font-size: 14px;
   }
 
   &__left {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include view(desktop) {
+      margin-left: 100px;
+      margin-right: 50px;
+    }
   }
 
   &__logo {
@@ -63,7 +77,7 @@
     @include view(desktop) {
       display: flex;
       flex-direction: row-reverse;
-      justify-content: space-around;
+      justify-content: center;
     }
   }
 }
