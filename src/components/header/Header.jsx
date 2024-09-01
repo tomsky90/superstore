@@ -76,9 +76,9 @@ const Header = ({ setAppHidden }) => {
             </ul>
           </nav>
           <div className="header__bag-icon-wrapper">
-            <button>
+            <Link to="cart">
               <img className="header__bag-icon" src={BagIcon} alt="" />
-            </button>
+            </Link>
           </div>
           <nav
             className={

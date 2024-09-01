@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Product from "./pages/Product/Product";
 import Products from "./pages/products/Products";
+import Cart from "./components/cart/Cart";
 import "./styles/main.scss";
 import { useState } from "react";
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/categories/:id", element: <Products /> },
       { path: "/product/:id", element: <Product /> },
+      { path: "/cart", element: <Cart /> },
     ],
   },
 ]);
