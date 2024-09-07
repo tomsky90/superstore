@@ -49,7 +49,7 @@ const Header = ({ setAppHidden }) => {
             <img src={HideNavBtn} alt="" />
           </button>
           <div className="header__logo-wrapper">
-            <Link to="/" className="header__logo">
+            <Link onClick={hideNav} to="/" className="header__logo">
               Super Store
             </Link>
           </div>
@@ -76,7 +76,7 @@ const Header = ({ setAppHidden }) => {
             </ul>
           </nav>
           <div className="header__bag-icon-wrapper">
-            <Link to="cart">
+            <Link onClick={hideNav} to="cart">
               <img className="header__bag-icon" src={BagIcon} alt="" />
             </Link>
           </div>
@@ -89,22 +89,34 @@ const Header = ({ setAppHidden }) => {
           >
             <ul className="header__mobile-nav-links-list">
               <li className="header__mobile-nav-link">
-                <NavLink to="/categories/:sale">Sale</NavLink>
+                <NavLink onClick={hideNav} to="/categories/:sale">
+                  Sale
+                </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink to="/categories/:men">Men</NavLink>
+                <NavLink onClick={hideNav} to="/categories/:men">
+                  Men
+                </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink to="/categories/:women">Women</NavLink>
+                <NavLink onClick={hideNav} to="/categories/:women">
+                  Women
+                </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink to="/categories/:accesories">Accesories</NavLink>
+                <NavLink onClick={hideNav} to="/categories/:accesories">
+                  Accesories
+                </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink to="/categories/:kids">Kids</NavLink>
+                <NavLink onClick={hideNav} to="/categories/:kids">
+                  Kids
+                </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink to="/categories/:offers">Offers</NavLink>
+                <NavLink onClick={hideNav} to="/categories/:offers">
+                  Offers
+                </NavLink>
               </li>
             </ul>
           </nav>

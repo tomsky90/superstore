@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import Product from "./pages/Product/Product";
+import Product from "./pages/product/Product";
 import Products from "./pages/products/Products";
 import Cart from "./components/cart/Cart";
 import "./styles/main.scss";
