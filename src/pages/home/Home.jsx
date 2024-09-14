@@ -9,7 +9,7 @@ const Home = () => {
       <Slider />
       <FeaturedProducts location={"Featured"} />
       <Categories />
-      <FeaturedProducts location={"Trending Now"} />
+      <FeaturedProducts location={"Trending"} />
       <NewsLetter />
     </div>
   );
