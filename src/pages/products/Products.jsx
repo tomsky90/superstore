@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import List from "../../components/list/List";
+import useFetch from "../../hooks/useFetch";
 
 const Products = () => {
-  const catId = parseInt(useParams().id);
+  const catId = useParams().id;
   const [maxPrice, setMaxPrice] = useState(1000);
   const [sort, setSort] = useState(null);
   const [visibility, setVisibility] = useState({
@@ -19,6 +20,25 @@ const Products = () => {
       [element]: !prevVisibility[element],
     }));
   };
+
+  const [selectedSubcategories, setSelectedSubcategories] = useState([]);
+
+  const handleOnChange = (e) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+
+    setSelectedSubcategories(
+      isChecked
+        ? [...selectedSubcategories, value]
+        : selectedSubcategories.filter((item) => item !== value)
+    );
+  };
+
+  const { data, loading, error } = useFetch(
+    `/subcategories?[filters][categories][title][$eq]=${catId}`
+  );
+
+  console.log(selectedSubcategories);
 
   return (
     <div className="products-page">
@@ -47,24 +67,19 @@ const Products = () => {
                 : "products-page__inputs-wrapper--hide"
             }
           >
-            <div className="products-page__input-wrapper">
-              <input type="checkbox" id="1" value={1} />
-              <label className="products-page__label" htmlFor="1">
-                Shoes
-              </label>
-            </div>
-            <div className="products-page__input-wrapper">
-              <input type="checkbox" id="2" value={2} />
-              <label className="products-page__label" htmlFor="2">
-                Skirts
-              </label>
-            </div>
-            <div className="product-page__input-wrapper">
-              <input type="checkbox" id="3" value={3} />
-              <label className="products-page__label" htmlFor="3">
-                Coats
-              </label>
-            </div>
+            {data?.map((item) => (
+              <div key={item.id} className="products-page__input-wrapper">
+                <input
+                  type="checkbox"
+                  id={item.id}
+                  value={item.id}
+                  onChange={handleOnChange}
+                />
+                <label className="products-page__label" htmlFor="1">
+                  {item.attributes.title}
+                </label>
+              </div>
+            ))}
           </div>
         </div>
         <div className="products-page__filter-item">
@@ -138,7 +153,12 @@ const Products = () => {
         </div>
       </div>
       <div className="products-page__right">
-        <List catId={catId} maxPrice={maxPrice} sort={sort} />
+        <List
+          catId={catId}
+          maxPrice={maxPrice}
+          sort={sort}
+          selectedSubCategories={selectedSubcategories}
+        />
       </div>
     </div>
   );

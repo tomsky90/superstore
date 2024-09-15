@@ -18,7 +18,7 @@ const Categories = () => {
         <p className="categories__text">
           Get everything you need, for whole family
         </p>
-        <Link to="/categories/:all" className="categories__linK">
+        <Link to="/categories/all" className="categories__linK">
           Shop All
         </Link>
       </div>
@@ -34,7 +34,7 @@ const Categories = () => {
             <p className="categories__card-text">
               Get everything you need this summer
             </p>
-            <Link to="/categories/:women" className="categories__card-linK">
+            <Link to="/categories/women" className="categories__card-linK">
               Shop Now
             </Link>
           </div>
@@ -66,7 +66,7 @@ const Categories = () => {
             <p className="categories__card-text">
               Kids clothes in great prices
             </p>
-            <Link to="/categories/:kids" className="categories__card-linK">
+            <Link to="/categories/kids" className="categories__card-linK">
               Shop Now
             </Link>
           </div>

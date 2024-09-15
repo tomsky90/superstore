@@ -56,22 +56,22 @@ const Header = ({ setAppHidden }) => {
           <nav className="header__desktop-nav">
             <ul className="header__desktop-nav-links-list">
               <li className="header__desktop-nav-link">
-                <NavLink to="/categories/:sale">Sale</NavLink>
+                <NavLink to="/categories/sale">Sale</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/categories/:men">Men</NavLink>
+                <NavLink to="/categories/men">Men</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/categories/:women">Women</NavLink>
+                <NavLink to="/categories/women">Women</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/categories/:accesories">Accesories</NavLink>
+                <NavLink to="/categories/accesories">Accesories</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/categories/:kids">Kids</NavLink>
+                <NavLink to="/categories/kids">Kids</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/categories/:offers">Offers</NavLink>
+                <NavLink to="/categories/offers">Offers</NavLink>
               </li>
             </ul>
           </nav>
@@ -89,32 +89,32 @@ const Header = ({ setAppHidden }) => {
           >
             <ul className="header__mobile-nav-links-list">
               <li className="header__mobile-nav-link">
-                <NavLink onClick={hideNav} to="/categories/:sale">
+                <NavLink onClick={hideNav} to="/categories/sale">
                   Sale
                 </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink onClick={hideNav} to="/categories/:men">
+                <NavLink onClick={hideNav} to="/categories/men">
                   Men
                 </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink onClick={hideNav} to="/categories/:women">
+                <NavLink onClick={hideNav} to="/categories/women">
                   Women
                 </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink onClick={hideNav} to="/categories/:accesories">
+                <NavLink onClick={hideNav} to="/categories/accesories">
                   Accesories
                 </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink onClick={hideNav} to="/categories/:kids">
+                <NavLink onClick={hideNav} to="/categories/kids">
                   Kids
                 </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink onClick={hideNav} to="/categories/:offers">
+                <NavLink onClick={hideNav} to="/categories/offers">
                   Offers
                 </NavLink>
               </li>
