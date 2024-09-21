@@ -18,7 +18,7 @@ const Categories = () => {
         <p className="categories__text">
           Get everything you need, for whole family
         </p>
-        <Link to="/categories/all" className="categories__linK">
+        <Link to="/categories/men" className="categories__linK">
           Shop All
         </Link>
       </div>

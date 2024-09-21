@@ -38,8 +38,6 @@ const Products = () => {
     `/subcategories?[filters][categories][title][$eq]=${catId}`
   );
 
-  console.log(selectedSubcategories);
-
   return (
     <div className="products-page">
       <img
@@ -153,12 +151,18 @@ const Products = () => {
         </div>
       </div>
       <div className="products-page__right">
-        <List
-          catId={catId}
-          maxPrice={maxPrice}
-          sort={sort}
-          selectedSubCategories={selectedSubcategories}
-        />
+        {loading ? (
+          "Loading Products"
+        ) : error ? (
+          "Sorry something went wrong"
+        ) : (
+          <List
+            catId={catId}
+            maxPrice={maxPrice}
+            sort={sort}
+            selectedSubCategories={selectedSubcategories}
+          />
+        )}
       </div>
     </div>
   );

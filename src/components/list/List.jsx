@@ -1,14 +1,17 @@
+/* eslint-disable react/prop-types */
 import Card from "../card/Card";
 import useFetch from "../../hooks/useFetch";
 
-const list = ({ selectedSubCategories, maxPrice, sort, catId }) => {
+const List = ({ selectedSubCategories, maxPrice, sort, catId }) => {
   const { data, loading, error } = useFetch(
-    `/products?populate=*&[filters][categories][title]=${catId}`
+    `/products?populate=*&[filters][categories][title]=${catId}${selectedSubCategories.map(
+      (item) => `&[filters][subcategories][id][$eq]=${item}`
+    )}&[filters][price][$lte]=${maxPrice}${sort ? `&sort=price:${sort}` : ""}`
   );
-  console.log(data);
 
   return (
     <div className="list">
+      {console.log(maxPrice)}
       {error
         ? "Something went wrong"
         : loading
@@ -18,4 +21,4 @@ const list = ({ selectedSubCategories, maxPrice, sort, catId }) => {
   );
 };
 
-export default list;
+export default List;
