@@ -1,5 +1,5 @@
 import useFetch from "../../hooks/useFetch";
-import FeaturedCard from "../featuredcard/FeaturedCard";
+import Card from "../card/Card";
 
 // eslint-disable-next-line react/prop-types
 const FeaturedProducts = ({ location }) => {
@@ -15,7 +15,7 @@ const FeaturedProducts = ({ location }) => {
           ? "Something went wrong"
           : loading
           ? "Loading"
-          : data?.map((item) => <FeaturedCard item={item} key={item.id} />)}
+          : data?.map((item) => <Card item={item} key={item.id} />)}
       </div>
     </section>
   );

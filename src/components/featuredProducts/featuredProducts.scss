@@ -17,30 +17,6 @@
   &__cards-wrapper {
     display: flex;
     overflow-x: auto;
-  }
-
-  &__card {
-    width: 150px;
-    margin-right: 10px;
-    flex-shrink: 0;
-
-    @include view(tablet) {
-      width: 200px;
-    }
-
-    @include view(desktop) {
-      width: 300px;
-    }
-  }
-
-  &__name {
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  &__old-price {
-    color: $grey;
-    text-decoration: line-through;
-    margin-right: 10px;
+    column-gap: 10px;
   }
 }

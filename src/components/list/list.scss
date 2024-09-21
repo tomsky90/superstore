@@ -1,8 +1,8 @@
 .list {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  column-gap: 10px;
   flex-wrap: wrap;
-  column-gap: 5px;
+
   row-gap: 15px;
 }

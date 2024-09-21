@@ -1,19 +1,16 @@
 .card {
+  width: 150px;
   display: flex;
   flex-direction: column;
   flex-direction: column;
   position: relative;
 
-  &__wrapper {
-    width: 48%;
+  @include view(tablet) {
+    width: 200px;
+  }
 
-    @include view(tablet) {
-      width: 32%;
-    }
-
-    @include view(desktop) {
-      width: 22%;
-    }
+  @include view(desktop) {
+    width: 300px;
   }
 
   &__new-product-label {
