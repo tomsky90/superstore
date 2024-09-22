@@ -34,17 +34,35 @@ const Products = () => {
     );
   };
 
-  const { data, loading, error } = useFetch(
-    `/subcategories?[filters][categories][title][$eq]=${catId}`
+  const {
+    data: subcategories,
+    loading: subcategoriesLoading,
+    error: subcategoriesError,
+  } = useFetch(`/subcategories?[filters][categories][title][$eq]=${catId}`);
+
+  const { data: category } = useFetch(
+    `/categories?[filters][title][$eq]=${catId}&populate=*`
   );
 
   return (
     <div className="products-page">
-      <img
-        src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
-        alt="bnner image"
-        className="products-page__banner-img"
-      />
+      {console.log(category)}
+      <div className="products-page__banner-img-wrapper">
+        <h3 className="products-page__banner-heading">
+          {category && category[0]?.attributes?.description}
+        </h3>
+        {category && (
+          <img
+            src={
+              import.meta.env.VITE_REACT_APP_UPLOAD_URL +
+              category[0]?.attributes?.img?.data?.attributes?.url
+            }
+            alt="bnner image"
+            className="products-page__banner-img"
+          />
+        )}
+      </div>
+
       <div className="products-page__left">
         <div className="products-page__filter-item">
           <div className="products-page__heading-wrapper">
@@ -65,7 +83,7 @@ const Products = () => {
                 : "products-page__inputs-wrapper--hide"
             }
           >
-            {data?.map((item) => (
+            {subcategories?.map((item) => (
               <div key={item.id} className="products-page__input-wrapper">
                 <input
                   type="checkbox"
@@ -151,9 +169,9 @@ const Products = () => {
         </div>
       </div>
       <div className="products-page__right">
-        {loading ? (
+        {subcategoriesLoading ? (
           "Loading Products"
-        ) : error ? (
+        ) : subcategoriesError ? (
           "Sorry something went wrong"
         ) : (
           <List
