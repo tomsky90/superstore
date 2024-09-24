@@ -95,10 +95,6 @@ const Product = () => {
               <p className="product-page__description">
                 {data?.attributes?.description}
               </p>
-              <hr className="product-page__hr" />
-              <span>ADDITIONAL INFORMATION</span>
-              <hr className="product-page__hr" />
-              <span>FAQ</span>
             </div>
           </div>
         </>
