@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
+import { useDispatch } from "react-redux";
+import { add } from "../../redux/cartSlice";
 
 const Product = () => {
+  const dispatch = useDispatch();
   const itemId = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img");
   const [qunatity, setQuantity] = useState(1);
@@ -10,7 +13,6 @@ const Product = () => {
 
   return (
     <div className="product-page">
-      {console.log(data)}
       {loading && "Loading"}
       {error && "sorry something went wrong"}
       {data && (
@@ -73,7 +75,21 @@ const Product = () => {
                 +
               </button>
             </div>
-            <button className="product-page__add-to-cart-btn">
+            <button
+              className="product-page__add-to-cart-btn"
+              onClick={() =>
+                dispatch(
+                  add({
+                    title: data?.attributes?.title,
+                    price: data?.attributes?.price,
+                    description: data?.attributes?.description,
+                    qty: qunatity,
+                    id: data?.id,
+                    img: data?.attributes?.img?.data?.attributes?.url,
+                  })
+                )
+              }
+            >
               {" "}
               Add to cart
             </button>

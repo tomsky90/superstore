@@ -46,7 +46,6 @@ const Products = () => {
 
   return (
     <div className="products-page">
-      {console.log(category)}
       <div className="products-page__banner-img-wrapper">
         <h3 className="products-page__banner-heading">
           {category && category[0]?.attributes?.description}

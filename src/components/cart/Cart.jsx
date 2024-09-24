@@ -1,37 +1,25 @@
+import { useSelector, useDispatch } from "react-redux";
+
 const Cart = () => {
-  const data = [
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/794062/pexels-photo-794062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      img2: "https://images.pexels.com/photos/794063/pexels-photo-794063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "pink long sleeved shirt ",
-      desc: "lorem ipsum",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 2,
-      img: "https://images.pexels.com/photos/1759622/pexels-photo-1759622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Black & white mini skirt",
-      desc: "lorem ipsum",
-      isNew: true,
-      oldPrice: 25,
-      price: 20,
-    },
-  ];
+  const products = useSelector((state) => state.cart.products);
 
   return (
     <div className="cart">
+      {console.log(products)}
       <h1 className="cart__h1">Products in your cart</h1>
-      {data?.map((item) => (
+      {products?.map((item) => (
         <div className="cart__item" key={item.id}>
-          <img className="cart__item-img" src={item.img} alt={item.title} />
+          <img
+            className="cart__item-img"
+            src={import.meta.env.VITE_REACT_APP_UPLOAD_URL + item.img}
+            alt={item.title}
+          />
           <div className="cart__item-details">
             <h2 className="cart__h2">{item.title}</h2>
             <p className="cart__p">{item.desc?.substring(0, 100)}</p>
             <div className="cart__price-wrapper">1 x {item.price}</div>
           </div>
+          <button>Remove</button>
         </div>
       ))}
       <div className="cart__summary">
