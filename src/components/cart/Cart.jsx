@@ -2,6 +2,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetCart, removeItem } from "../../redux/cartSlice";
 import FeaturedProducts from "../featuredProducts/FeaturedProducts";
 
+import { loadStripe } from "@stripe/stripe-js";
+import { makeRequest } from "../../makeRequest";
+
 const Cart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cart.products);
@@ -11,6 +14,26 @@ const Cart = () => {
     products.forEach((item) => (total += item.qty * item.price));
 
     return total.toFixed(2);
+  };
+
+  const stripePromise = loadStripe(
+    "pk_test_51OdNxuINCGdR9J4EQ3OCAaH1ZtdTQyeukW6wqna4J4qyXOudFT1qhVTiOVET9SrcBmxlMvOvSiwjHtz8OF7ERxAQ00eaNPSM1r"
+  );
+  const handlePayment = async () => {
+    try {
+      const stripe = await stripePromise;
+      const res = await makeRequest.post("/orders", {
+        products,
+      });
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch (error) {
+      console.log(error);
+      console.log(error.response.data); // The response payload from the server (if any)
+      console.log(error.response.status); // The HTTP status code (500 in this case)
+      console.log(error.response.headers); // Any headers returned by the server
+    }
   };
 
   return (
@@ -46,7 +69,9 @@ const Cart = () => {
         <span>SUBTOTAL</span>
         <span>£{total()}</span>
       </div>
-      <button className="cart__checkout-btn">PROCEED TO CHECKOUT</button>
+      <button onClick={() => handlePayment()} className="cart__checkout-btn">
+        PROCEED TO CHECKOUT
+      </button>
       <button
         className="cart__reset"
         onClick={() => {
