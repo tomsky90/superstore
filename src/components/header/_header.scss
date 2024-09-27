@@ -37,8 +37,28 @@
     font-weight: 800;
   }
 
+  &__bag-icon-wrapper {
+    position: relative;
+  }
+
   &__bag-icon {
     width: 20px;
+  }
+
+  &__bag-qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    background-color: $black;
+    width: 20px;
+    height: 20px;
+    color: $white;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 12px;
   }
 
   &__show-nav-btn {
