@@ -10,9 +10,32 @@ const Product = () => {
   const [selectedImg, setSelectedImg] = useState("img");
   const [qunatity, setQuantity] = useState(1);
   const { data, loading, error } = useFetch(`/products/${itemId}?populate=*`);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const displayAlert = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    setShowAlert(true);
+    console.log(showAlert);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
+  };
 
   return (
     <div className="product-page">
+      <div
+        className={
+          showAlert
+            ? `product-page__alert product-page__alert--active`
+            : `product-page__alert`
+        }
+      >
+        {data?.attributes?.title} Added To Cart
+      </div>
       {loading && "Loading"}
       {error && "sorry something went wrong"}
       {data && (
@@ -77,7 +100,7 @@ const Product = () => {
             </div>
             <button
               className="product-page__add-to-cart-btn"
-              onClick={() =>
+              onClick={() => {
                 dispatch(
                   add({
                     title: data?.attributes?.title,
@@ -87,8 +110,10 @@ const Product = () => {
                     id: data?.id,
                     img: data?.attributes?.img?.data?.attributes?.url,
                   })
-                )
-              }
+                );
+
+                displayAlert();
+              }}
             >
               {" "}
               Add to cart
