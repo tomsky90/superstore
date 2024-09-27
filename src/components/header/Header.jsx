@@ -3,10 +3,12 @@ import BagIcon from "../../assets/bag-icon.png";
 import HideNavBtn from "../../assets/close.webp";
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ setAppHidden }) => {
   const [isMobileNavActive, setIsMobileNavActive] = useState(false);
+  const products = useSelector((state) => state.cart.products);
 
   const showNav = () => {
     setIsMobileNavActive(true);
@@ -79,6 +81,7 @@ const Header = ({ setAppHidden }) => {
             <Link onClick={hideNav} to="cart">
               <img className="header__bag-icon" src={BagIcon} alt="" />
             </Link>
+            <div className="header__bag-qty">{products.length}</div>
           </div>
           <nav
             className={
