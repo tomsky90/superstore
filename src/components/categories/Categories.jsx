@@ -3,6 +3,7 @@ import bgcImage from "../../assets/categoriesBackground.jpg";
 import kidsFashion from "../../assets/kids-fashion.jpg";
 import menFashion from "../../assets/men-fashion.jpg";
 import womenFashion from "../../assets/women-fashion.jpg";
+import { scrollToTop } from "../../utils/scroll";
 
 const Categories = () => {
   return (
@@ -18,7 +19,13 @@ const Categories = () => {
         <p className="categories__text">
           Get everything you need, for whole family
         </p>
-        <Link to="/categories/men" className="categories__linK">
+        <Link
+          onClick={() => {
+            scrollToTop();
+          }}
+          to="/categories/men"
+          className="categories__linK"
+        >
           Shop All
         </Link>
       </div>
@@ -34,7 +41,13 @@ const Categories = () => {
             <p className="categories__card-text">
               Get everything you need this summer
             </p>
-            <Link to="/categories/women" className="categories__card-linK">
+            <Link
+              onClick={() => {
+                scrollToTop();
+              }}
+              to="/categories/women"
+              className="categories__card-linK"
+            >
               Shop Now
             </Link>
           </div>
@@ -50,7 +63,13 @@ const Categories = () => {
             <p className="categories__card-text">
               Stay comfortable whatever the weather
             </p>
-            <Link to="/categories/men" className="categories__card-linK">
+            <Link
+              onClick={() => {
+                scrollToTop();
+              }}
+              to="/categories/men"
+              className="categories__card-linK"
+            >
               Shop Now
             </Link>
           </div>
@@ -66,7 +85,13 @@ const Categories = () => {
             <p className="categories__card-text">
               Kids clothes in great prices
             </p>
-            <Link to="/categories/kids" className="categories__card-linK">
+            <Link
+              onClick={() => {
+                scrollToTop();
+              }}
+              to="/categories/kids"
+              className="categories__card-linK"
+            >
               Shop Now
             </Link>
           </div>
