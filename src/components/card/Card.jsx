@@ -1,9 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../../utils/scroll";
 
 const Card = ({ item }) => {
   return (
-    <Link className="link card__wrapper" to={`/product/${item.id}`}>
+    <Link
+      className="link card__wrapper"
+      onClick={() => scrollToTop()}
+      to={`/product/${item.id}`}
+    >
       <div className="card">
         <div className="card__img-wrapper">
           {item?.attributes?.isNew && (
