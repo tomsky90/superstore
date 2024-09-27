@@ -72,9 +72,6 @@ const Header = ({ setAppHidden }) => {
               <li className="header__desktop-nav-link">
                 <NavLink to="/categories/kids">Kids</NavLink>
               </li>
-              <li className="header__desktop-nav-link">
-                <NavLink to="/categories/offers">Offers</NavLink>
-              </li>
             </ul>
           </nav>
           <div className="header__bag-icon-wrapper">
@@ -114,11 +111,6 @@ const Header = ({ setAppHidden }) => {
               <li className="header__mobile-nav-link">
                 <NavLink onClick={hideNav} to="/categories/kids">
                   Kids
-                </NavLink>
-              </li>
-              <li className="header__mobile-nav-link">
-                <NavLink onClick={hideNav} to="/categories/offers">
-                  Offers
                 </NavLink>
               </li>
             </ul>
