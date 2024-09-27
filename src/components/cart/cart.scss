@@ -13,6 +13,7 @@
 
   &__items-wrapper {
     display: flex;
+    flex-wrap: wrap;
     column-gap: 20px;
   }
 
@@ -21,6 +22,7 @@
     align-items: start;
     gap: 20px;
     margin-bottom: 30px;
+    width: 47%;
   }
 
   &__item-img {

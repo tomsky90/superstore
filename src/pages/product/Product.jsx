@@ -4,6 +4,8 @@ import useFetch from "../../hooks/useFetch";
 import { useDispatch } from "react-redux";
 import { add } from "../../redux/cartSlice";
 
+import { scrollToTop } from "../../utils/scroll";
+
 const Product = () => {
   const dispatch = useDispatch();
   const itemId = useParams().id;
@@ -13,11 +15,7 @@ const Product = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const displayAlert = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    scrollToTop();
     setShowAlert(true);
     console.log(showAlert);
     setTimeout(() => {
@@ -34,7 +32,7 @@ const Product = () => {
             : `product-page__alert`
         }
       >
-        {data?.attributes?.title} Added To Cart
+        Added To Cart
       </div>
       {loading && "Loading"}
       {error && "sorry something went wrong"}
