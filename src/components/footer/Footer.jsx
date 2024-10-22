@@ -1,14 +1,27 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__top">
         <div className="footer__item">
           <h2 className="footer__h2">Categories</h2>
-          <span className="footer__span">Women</span>
-          <span className="footer__span">Men</span>
-          <span className="footer__span">Shoes</span>
-          <span className="footer__span">Accesories</span>
-          <span className="footer__span">New Arrivals</span>
+          <Link to="/categories/sale">
+            <span className="footer__span">Sale</span>
+          </Link>
+          <Link to="/categories/women">
+            <span className="footer__span">Women</span>
+          </Link>
+          <Link to="/categories/men">
+            {" "}
+            <span className="footer__span">Men</span>
+          </Link>
+          <Link to="/categories/accesories">
+            <span className="footer__span">Accesories</span>
+          </Link>
+          <Link to="/categories/kids">
+            <span className="footer__span">Kids</span>
+          </Link>
         </div>
         <div className="footer__item">
           <h2 className="footer__h2">Links</h2>

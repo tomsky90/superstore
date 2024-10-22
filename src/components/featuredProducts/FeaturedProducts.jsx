@@ -3,14 +3,13 @@ import Card from "../card/Card";
 
 // eslint-disable-next-line react/prop-types
 const FeaturedProducts = ({ location }) => {
-  const { data, loading, error } = useFetch(
-    `products?populate=*&[filters][type][$eq]=${location}`
-  );
+  const { data, loading, error } = useFetch(`?is_${location}=1`);
 
   return (
     <section className="featured">
       <h2 className="featured__heading">{location}</h2>
       <div className="featured__cards-wrapper">
+        {console.log(data)}
         {error
           ? "Something went wrong"
           : loading
