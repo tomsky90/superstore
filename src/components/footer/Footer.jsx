@@ -16,8 +16,8 @@ const Footer = () => {
             {" "}
             <span className="footer__span">Men</span>
           </Link>
-          <Link to="/categories/accesories">
-            <span className="footer__span">Accesories</span>
+          <Link to="/categories/accessories">
+            <span className="footer__span">Accessories</span>
           </Link>
           <Link to="/categories/kids">
             <span className="footer__span">Kids</span>

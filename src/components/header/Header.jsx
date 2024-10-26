@@ -67,7 +67,7 @@ const Header = ({ setAppHidden }) => {
                 <NavLink to="/categories/women">Women</NavLink>
               </li>
               <li className="header__desktop-nav-link">
-                <NavLink to="/categories/accesories">Accesories</NavLink>
+                <NavLink to="/categories/accessories">Accessories</NavLink>
               </li>
               <li className="header__desktop-nav-link">
                 <NavLink to="/categories/kids">Kids</NavLink>
@@ -104,8 +104,8 @@ const Header = ({ setAppHidden }) => {
                 </NavLink>
               </li>
               <li className="header__mobile-nav-link">
-                <NavLink onClick={hideNav} to="/categories/accesories">
-                  Accesories
+                <NavLink onClick={hideNav} to="/categories/accessories">
+                  Accessories
                 </NavLink>
               </li>
               <li className="header__mobile-nav-link">
