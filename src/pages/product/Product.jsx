@@ -11,7 +11,7 @@ const Product = () => {
   const itemId = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img");
   const [qunatity, setQuantity] = useState(1);
-  const { data, loading, error } = useFetch(`/products/${itemId}?populate=*`);
+  const { data, loading, error } = useFetch(`product.php?id=${itemId}`);
   const [showAlert, setShowAlert] = useState(false);
 
   const displayAlert = () => {
@@ -43,20 +43,14 @@ const Product = () => {
             <div className="product-page__images">
               <img
                 className="product-page__thumb-img"
-                src={
-                  import.meta.env.VITE_REACT_APP_UPLOAD_URL +
-                  data?.attributes?.img?.data?.attributes?.url
-                }
-                alt={data?.attributes?.title}
+                src={import.meta.env.VITE_REACT_APP_UPLOAD_URL + data?.img}
+                alt={data?.name}
                 onClick={() => setSelectedImg("img")}
               />
               <img
                 className="product-page__thumb-img"
-                src={
-                  import.meta.env.VITE_REACT_APP_UPLOAD_URL +
-                  data?.attributes?.img2?.data?.attributes?.url
-                }
-                alt={data?.attributes?.title}
+                src={import.meta.env.VITE_REACT_APP_UPLOAD_URL + data?.img2}
+                alt={data?.name}
                 onClick={() => setSelectedImg("img2")}
               />
             </div>
@@ -65,20 +59,18 @@ const Product = () => {
                 className="product-page__main-img"
                 src={
                   import.meta.env.VITE_REACT_APP_UPLOAD_URL +
-                  data?.attributes[selectedImg]?.data?.attributes?.url
+                  data?.[selectedImg]
                 }
-                alt={data?.attributes?.title}
+                alt={data?.product_name}
               />
             </div>
           </div>
           <div className="product-page__right">
-            <h1 className="product-page__h1">{data?.attributes?.title}</h1>
+            <h1 className="product-page__h1">{data?.product_name}</h1>
             <span className="product-page__price-container">
-              £{data?.attributes?.price}
+              £{data?.price}
             </span>
-            <p className="product-page__description">
-              {data?.attributes?.description}
-            </p>
+            <p className="product-page__description">{data?.description}</p>
             <div className="product-page__quantity">
               <button
                 className="product-page__qty-btn"
@@ -101,12 +93,12 @@ const Product = () => {
               onClick={() => {
                 dispatch(
                   add({
-                    title: data?.attributes?.title,
-                    price: data?.attributes?.price,
-                    description: data?.attributes?.description,
+                    title: data?.product_name,
+                    price: data?.price,
+                    description: data?.description,
                     qty: qunatity,
                     id: data?.id,
-                    img: data?.attributes?.img?.data?.attributes?.url,
+                    img: data?.img,
                   })
                 );
 
@@ -119,21 +111,15 @@ const Product = () => {
 
             <div className="product-page__info">
               <span>
-                Product Type:{" "}
-                {data.attributes.categories.data[0].attributes.title}
+                Product Type: {data.category_name}
                 {", "}
-                {data.attributes.subcategories.data[0].attributes.title}
-              </span>
-              <span>
-                Tag: {data.attributes.categories.data[0].attributes.title}
+                {data.is_new && "New Collection"}
               </span>
             </div>
             <hr className="product-page__hr" />
             <div className="product-page__info">
               <span>DESCRIPTION</span>
-              <p className="product-page__description">
-                {data?.attributes?.description}
-              </p>
+              <p className="product-page__description">{data?.description}</p>
             </div>
           </div>
         </>
