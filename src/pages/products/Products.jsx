@@ -38,24 +38,21 @@ const Products = () => {
     data: subcategories,
     loading: subcategoriesLoading,
     error: subcategoriesError,
-  } = useFetch(`/subcategories?[filters][categories][title][$eq]=${catId}`);
+  } = useFetch(`subcategories.php`);
 
-  const { data: category } = useFetch(
-    `/categories?[filters][title][$eq]=${catId}&populate=*`
-  );
+  const { data: category } = useFetch(`categories.php?category=${catId}`);
 
   return (
     <div className="products-page">
       <div className="products-page__banner-img-wrapper">
         <h3 className="products-page__banner-heading">
-          {category && category[0]?.attributes?.description}
+          {category && category[0]?.description}
         </h3>
         {category && (
           <img
-            src={
-              import.meta.env.VITE_REACT_APP_UPLOAD_URL +
-              category[0]?.attributes?.img?.data?.attributes?.url
-            }
+            src={`${import.meta.env.VITE_REACT_APP_UPLOAD_URL}${
+              category[0]?.img
+            } `}
             alt="bnner image"
             className="products-page__banner-img"
           />
@@ -84,14 +81,18 @@ const Products = () => {
           >
             {subcategories?.map((item) => (
               <div key={item.id} className="products-page__input-wrapper">
+                {console.log(item)}
                 <input
                   type="checkbox"
-                  id={item.id}
+                  id={`subcategory-${item.id}`}
                   value={item.id}
                   onChange={handleOnChange}
                 />
-                <label className="products-page__label" htmlFor="1">
-                  {item.attributes.title}
+                <label
+                  className="products-page__label"
+                  htmlFor={`subcategory-${item.id}`}
+                >
+                  {item.name}
                 </label>
               </div>
             ))}

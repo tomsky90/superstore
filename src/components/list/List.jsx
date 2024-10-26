@@ -4,13 +4,14 @@ import useFetch from "../../hooks/useFetch";
 
 const List = ({ selectedSubCategories, maxPrice, sort, catId }) => {
   const { data, loading, error } = useFetch(
-    `/products?populate=*&[filters][categories][title]=${catId}${selectedSubCategories.map(
-      (item) => `&[filters][subcategories][id][$eq]=${item}`
-    )}&[filters][price][$lte]=${maxPrice}${sort ? `&sort=price:${sort}` : ""}`
+    `products.php?category=${catId}${selectedSubCategories.map(
+      (item) => `&subcategories[]=${item}`
+    )}&max_price=${maxPrice}&sort=${sort}`
   );
 
   return (
     <div className="list">
+      {console.log(selectedSubCategories)}
       {error
         ? "Something went wrong"
         : loading

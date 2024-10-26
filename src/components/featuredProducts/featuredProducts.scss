@@ -8,6 +8,7 @@
     width: 100%;
     margin-bottom: 20px;
     font-weight: 600;
+    text-transform: capitalize;
 
     @include view(tablet) {
       font-size: 30px;
