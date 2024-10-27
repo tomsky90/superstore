@@ -49,7 +49,7 @@ const Cart = () => {
             />
             <div className="cart__item-details">
               <h2 className="cart__h2">{item.title}</h2>
-              <p className="cart__p">{item.desc?.substring(0, 100)}</p>
+              <p className="cart__p">{item.description?.substring(0, 100)}</p>
               <div className="cart__price-wrapper">
                 {item.qty} x {item.price}
               </div>
