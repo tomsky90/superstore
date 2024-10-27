@@ -14,7 +14,6 @@ const Products = () => {
   });
 
   const toggleVisibility = (element) => {
-    console.log(visibility);
     setVisibility((prevVisibility) => ({
       ...prevVisibility,
       [element]: !prevVisibility[element],
@@ -81,7 +80,6 @@ const Products = () => {
           >
             {subcategories?.map((item) => (
               <div key={item.id} className="products-page__input-wrapper">
-                {console.log(item)}
                 <input
                   type="checkbox"
                   id={`subcategory-${item.id}`}

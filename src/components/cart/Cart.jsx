@@ -22,7 +22,7 @@ const Cart = () => {
   const handlePayment = async () => {
     try {
       const stripe = await stripePromise;
-      const res = await makeRequest.post("/orders", {
+      const res = await makeRequest.post("/orders.php", {
         products,
       });
       await stripe.redirectToCheckout({
