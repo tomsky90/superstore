@@ -11,7 +11,6 @@ const List = ({ selectedSubCategories, maxPrice, sort, catId }) => {
 
   return (
     <div className="list">
-      {console.log(selectedSubCategories)}
       {error
         ? "Something went wrong"
         : loading
