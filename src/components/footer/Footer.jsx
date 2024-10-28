@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../../utils/scroll";
 
 const Footer = () => {
   return (
@@ -6,20 +7,45 @@ const Footer = () => {
       <div className="footer__top">
         <div className="footer__item">
           <h2 className="footer__h2">Categories</h2>
-          <Link to="/categories/sale">
+          <Link
+            onClick={() => {
+              scrollToTop();
+            }}
+            to="/categories/sale"
+          >
             <span className="footer__span">Sale</span>
           </Link>
-          <Link to="/categories/women">
+          <Link
+            onClick={() => {
+              scrollToTop();
+            }}
+            to="/categories/women"
+          >
             <span className="footer__span">Women</span>
           </Link>
-          <Link to="/categories/men">
+          <Link
+            onClick={() => {
+              scrollToTop();
+            }}
+            to="/categories/men"
+          >
             {" "}
             <span className="footer__span">Men</span>
           </Link>
-          <Link to="/categories/accessories">
+          <Link
+            onClick={() => {
+              scrollToTop();
+            }}
+            to="/categories/accessories"
+          >
             <span className="footer__span">Accessories</span>
           </Link>
-          <Link to="/categories/kids">
+          <Link
+            onClick={() => {
+              scrollToTop();
+            }}
+            to="/categories/kids"
+          >
             <span className="footer__span">Kids</span>
           </Link>
         </div>
