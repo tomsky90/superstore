@@ -23,10 +23,10 @@ const Categories = () => {
           onClick={() => {
             scrollToTop();
           }}
-          to="/categories/men"
+          to="/categories/sale"
           className="categories__linK"
         >
-          Shop All
+          NOW ON SALE
         </Link>
       </div>
       <div className="categories__cards-wrapper">
