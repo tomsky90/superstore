@@ -158,6 +158,10 @@
     font-size: 14px;
     font-weight: bold;
 
+    &:hover {
+      background-color: lighten($color: $grey, $amount: 20);
+    }
+
     @include view(desktop) {
       font-size: 20px;
     }
