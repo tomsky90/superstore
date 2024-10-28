@@ -45,5 +45,11 @@
     padding: 10px;
     border-radius: 16px;
     width: 150px;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($color: $black, $amount: 20);
+    }
   }
 }
