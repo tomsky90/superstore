@@ -113,7 +113,7 @@ const Product = () => {
               <span>
                 Product Type: {data.category_name}
                 {", "}
-                {data.is_new && "New Collection"}
+                {data.is_new !== 0 ? "New Collection" : null}
               </span>
             </div>
             <hr className="product-page__hr" />
