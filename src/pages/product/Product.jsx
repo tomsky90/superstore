@@ -20,7 +20,7 @@ const Product = () => {
     console.log(showAlert);
     setTimeout(() => {
       setShowAlert(false);
-    }, 2000);
+    }, 2500);
   };
 
   return (
