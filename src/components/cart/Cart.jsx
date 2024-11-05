@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { resetCart, removeItem } from "../../redux/cartSlice";
+import { useState } from "react";
 import FeaturedProducts from "../featuredProducts/FeaturedProducts";
 
 import { loadStripe } from "@stripe/stripe-js";
@@ -8,6 +9,7 @@ import { makeRequest } from "../../makeRequest";
 const Cart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cart.products);
+  const [error, setError] = useState(null);
 
   const total = () => {
     let total = 0;
@@ -20,19 +22,20 @@ const Cart = () => {
     "pk_test_51OdNxuINCGdR9J4EQ3OCAaH1ZtdTQyeukW6wqna4J4qyXOudFT1qhVTiOVET9SrcBmxlMvOvSiwjHtz8OF7ERxAQ00eaNPSM1r"
   );
   const handlePayment = async () => {
-    try {
-      const stripe = await stripePromise;
-      const res = await makeRequest.post("/orders.php", {
-        products,
-      });
-      await stripe.redirectToCheckout({
-        sessionId: res.data.stripeSession.id,
-      });
-    } catch (error) {
-      console.log(error);
-      console.log(error.response.data); // The response payload from the server (if any)
-      console.log(error.response.status); // The HTTP status code (500 in this case)
-      console.log(error.response.headers); // Any headers returned by the server
+    if (products.length === 0) {
+      setError("Your cart is empty");
+    } else {
+      try {
+        const stripe = await stripePromise;
+        const res = await makeRequest.post("/orders.php", {
+          products,
+        });
+        await stripe.redirectToCheckout({
+          sessionId: res.data.stripeSession.id,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -69,6 +72,7 @@ const Cart = () => {
         <span>SUBTOTAL</span>
         <span>£{total()}</span>
       </div>
+      {error && <span className="cart__error">{error}</span>}
       <button onClick={() => handlePayment()} className="cart__checkout-btn">
         PROCEED TO CHECKOUT
       </button>

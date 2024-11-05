@@ -6,7 +6,7 @@
 
   &__h1 {
     margin-bottom: 30px;
-    color: #888;
+    color: $dark-grey;
     font-weight: 400;
     font-size: 24px;
   }
@@ -36,7 +36,7 @@
   }
 
   &__p {
-    color: #888;
+    color: $dark-grey;
     margin-bottom: 10px;
     font-size: 14px;
   }
@@ -47,11 +47,11 @@
   }
 
   &__price-wrapper {
-    color: #2879fe;
+    color: $blue;
   }
 
   &__delete-icon {
-    color: red;
+    color: $red;
     font-size: 30px;
     cursor: pointer;
   }
@@ -83,7 +83,7 @@
     cursor: pointer;
     border: none;
     background-color: $orange;
-    color: white;
+    color: $white;
     font-weight: 500;
     margin-bottom: 20px;
     margin-left: auto;
@@ -96,13 +96,17 @@
   }
 
   &__remove-btn {
-    color: red;
+    color: $red;
     font-size: 12px;
     cursor: pointer;
   }
 
+  &__error {
+    color: $red;
+  }
+
   &__reset {
-    color: red;
+    color: $red;
     font-size: 12px;
     cursor: pointer;
   }
