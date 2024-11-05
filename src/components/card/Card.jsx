@@ -5,11 +5,11 @@ import { scrollToTop } from "../../utils/scroll";
 const Card = ({ item }) => {
   return (
     <Link
-      className="link card__wrapper"
+      className="link card"
       onClick={() => scrollToTop()}
       to={`/product/${item.id}`}
     >
-      <div className="card">
+      <div className="card__wrapper">
         <div className="card__img-wrapper">
           {item?.is_new ? (
             <span className="card__new-product-label">New Seson</span>
