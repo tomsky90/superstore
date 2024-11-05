@@ -17,7 +17,6 @@ const Product = () => {
   const displayAlert = () => {
     scrollToTop();
     setShowAlert(true);
-    console.log(showAlert);
     setTimeout(() => {
       setShowAlert(false);
     }, 2500);
