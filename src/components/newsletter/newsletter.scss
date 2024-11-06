@@ -52,4 +52,25 @@
       background-color: lighten($color: $black, $amount: 20);
     }
   }
+
+  &__input-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__error {
+    position: absolute;
+    color: $red;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+  }
+
+  &__message {
+    position: absolute;
+    color: green;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+  }
 }
